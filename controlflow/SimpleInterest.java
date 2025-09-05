@@ -1,0 +1,59 @@
+package controlflow;
+
+import java.util.Scanner;
+
+/**
+ * Author  : Shozaib.Zulfiqar
+ * Date    : Aug 30, 2025
+ * Time    : 11:47:52 AM
+ * Project : CoreJava
+ */
+
+public class SimpleInterest {
+
+	public static void main(String[] args) {
+
+//		Program to Calculate Simple Interest for a Loan Amount
+
+
+
+		String customerName;
+				double principal;
+				float si;
+				int term,rate;
+
+				///Create scanner object for taking input at runtime
+				Scanner scan = new Scanner(System.in);
+
+				//Input
+				System.out.println("*********** Soft Bank - Simple Interest Calculation *********");
+				System.out.println("Enter Customer Name : ");
+				customerName=scan.nextLine();//Multiple words input
+				System.out.println("Enter Loan Amount   : ");
+				principal=scan.nextDouble();
+				System.out.println("Enter Loan Term     : ");
+				term=scan.nextInt();
+				System.out.println("Enter Rate of Interest :");
+				rate=scan.nextInt();
+
+				//Calculate Simple Interest
+				if(principal > 100000) {
+					si=(float) (principal*term*rate)/100;
+
+					//Output
+					System.out.println("************ Loan Details ************************");
+					System.out.println("Customer Name           : "+customerName);
+					System.out.println("Principal Amount        : "+principal);
+					System.out.println("Term                    : "+term);
+					System.out.println("Rate of Interest        : "+rate);
+					System.out.println("--------------------------------------------------");
+					System.out.println("Simple Interest            : "+si);
+					System.out.println("--------------------------------------------------");
+				} else {
+					System.out.println("Not Eligible for the loan. Please avail above 100000.");
+				}
+
+				scan.close();
+	}
+
+}
